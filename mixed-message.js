@@ -51,3 +51,20 @@ const movieQuotes = [
         movie: 'Raiders of the Lost Ark'
     }
 ];
+
+// Grabs a random object from the quotes array and returns it
+const generateRandomQuoteObj = () => {
+    const quoteObj = movieQuotes[Math.floor(Math.random() * movieQuotes.length)];
+    return quoteObj;
+}
+
+const displayMixedMessage = () => {
+    const quoteObj1 = generateRandomQuoteObj();
+    const quoteObj2 = generateRandomQuoteObj();
+    const quoteObj3 = generateRandomQuoteObj();
+
+    console.log('\nIncorrect quote of the day: \n');
+    console.log(`${quoteObj1.quote} -- ${quoteObj2.character}, (${quoteObj3.movie})`);
+}
+
+displayMixedMessage();
