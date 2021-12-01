@@ -63,8 +63,17 @@ const displayMixedMessage = () => {
     const quoteObj2 = generateRandomQuoteObj();
     const quoteObj3 = generateRandomQuoteObj();
 
-    console.log('\nIncorrect quote of the day: \n');
-    console.log(`${quoteObj1.quote} -- ${quoteObj2.character}, (${quoteObj3.movie})`);
+    if (quoteObj1 === quoteObj2 || quoteObj1 === quoteObj3) {
+        quoteObj1 = generateRandomQuoteObj();
+    }
+    else if (quoteObj2 === quoteObj1 || quoteObj2 === quoteObj3){
+        quoteObj2 = generateRandomQuoteObj();
+    } else {
+        console.log('\nIncorrect quote of the day: \n');
+        console.log(`${quoteObj1.quote} -- ${quoteObj2.character}, (${quoteObj3.movie})`);
+    }
+
+
 }
 
 displayMixedMessage();
