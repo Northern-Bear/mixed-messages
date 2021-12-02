@@ -66,13 +66,13 @@ const displayMixedMessage = () => {
     if (quoteObj1 === quoteObj2 || quoteObj1 === quoteObj3) {
         quoteObj1 = generateRandomQuoteObj();
     }
-    else if (quoteObj2 === quoteObj1 || quoteObj2 === quoteObj3){
+    if (quoteObj2 === quoteObj1 || quoteObj2 === quoteObj3){
         quoteObj2 = generateRandomQuoteObj();
     }
 
     console.log('\nIncorrect quote of the day: \n');
     console.log(`${quoteObj1.quote} -- ${quoteObj2.character}, (${quoteObj3.movie})`);
-
+    document.getElementById("quote-intro").innerHTML = '\nIncorrect quote of the day: \n';
+    document.getElementById("quote").innerHTML = `"${quoteObj1.quote}" -- ${quoteObj2.character}, (${quoteObj3.movie})`
 }
 
-displayMixedMessage();
